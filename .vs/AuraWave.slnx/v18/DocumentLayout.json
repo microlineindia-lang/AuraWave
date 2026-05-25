@@ -91,8 +91,7 @@
               "RelativeToolTip": "AuraWave.Analysis\\Algorithms\\Antennapatternanalyzer.cs",
               "ViewState": "AgIAABcAAAAAAAAAAAAiwNMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-25T09:55:01.458Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-25T09:55:01.458Z"
             },
             {
               "$type": "Document",
@@ -104,8 +103,7 @@
               "RelativeToolTip": "AuraWave.Core\\Services\\Scanengine.cs",
               "ViewState": "AgIAANAAAAAAAAAAAAAYwOAAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-25T09:53:34.69Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-25T09:53:34.69Z"
             },
             {
               "$type": "Document",
@@ -117,8 +115,7 @@
               "RelativeToolTip": "AuraWave.Hardware\\Turntable\\Simulatedturntablecontroller.cs",
               "ViewState": "AgIAAFIAAAAAAAAAAAAUwHQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-25T09:52:14.422Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-25T09:52:14.422Z"
             },
             {
               "$type": "Document",
@@ -130,8 +127,7 @@
               "RelativeToolTip": "AuraWave.Hardware\\Turntable\\Serialturntablecontroller.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-25T09:49:31.293Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-25T09:49:31.293Z"
             },
             {
               "$type": "Document",
@@ -143,8 +139,7 @@
               "RelativeToolTip": "AuraWave.Hardware\\VNA\\Simulatedvnacontroller.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-25T09:47:45.375Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-25T09:47:45.375Z"
             },
             {
               "$type": "Document",
@@ -156,8 +151,7 @@
               "RelativeToolTip": "AuraWave.Core\\Services\\Navigationservice.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-25T09:46:39.379Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-25T09:46:39.379Z"
             },
             {
               "$type": "Document",
@@ -169,8 +163,7 @@
               "RelativeToolTip": "AuraWave.Core\\Services\\Logservices.cs",
               "ViewState": "AgIAABQAAAAAAAAAAAAgwCcAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-25T09:45:43.337Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-25T09:45:43.337Z"
             },
             {
               "$type": "Document",
@@ -182,8 +175,7 @@
               "RelativeToolTip": "AuraWave.Core\\Interfaces\\Hardwareinterfaces.cs",
               "ViewState": "AgIAAJIAAAAAAAAAAAAswBAAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-25T09:44:45.62Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-25T09:44:45.62Z"
             },
             {
               "$type": "Document",
@@ -195,8 +187,7 @@
               "RelativeToolTip": "AuraWave.Core\\Enums\\Enums.cs",
               "ViewState": "AgIAAEAAAAAAAAAAAAAcwE8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-25T09:43:30.93Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-25T09:43:30.93Z"
             },
             {
               "$type": "Document",
@@ -208,8 +199,7 @@
               "RelativeToolTip": "AuraWave.Core\\Models\\DomainModels.cs",
               "ViewState": "AgIAAIgAAAAAAAAAAADwv5MAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-25T09:36:05.268Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-25T09:36:05.268Z"
             },
             {
               "$type": "Document",
@@ -221,8 +211,7 @@
               "RelativeToolTip": "AuraWave.Core\\Class1.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-25T09:34:30.753Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-25T09:34:30.753Z"
             },
             {
               "$type": "Document",
@@ -233,8 +222,7 @@
               "ToolTip": "F:\\Project\\AuraWave\\AuraWave.App\\App.xaml",
               "RelativeToolTip": "AuraWave.App\\App.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-05-25T09:01:03.34Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-25T09:01:03.34Z"
             }
           ]
         }
