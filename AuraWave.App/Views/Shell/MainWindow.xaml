@@ -1,0 +1,251 @@
+﻿<Window x:Class="AuraWave.App.Views.Shell.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AuraWave.App.Views.Shell"
+        xmlns:controls="clr-namespace:AuraWave.App.Controls"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="64"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="32"/>
+        </Grid.RowDefinitions>
+        <!-- Top Title Bar -->
+        <Border Grid.Row="0"
+                Background="{StaticResource Brush.TopbarBackground}"
+                BorderBrush="{StaticResource Brush.Border}"
+                BorderThickness="0,0,0,1">
+            <Grid Margin="18,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="260"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="420"/>
+                </Grid.ColumnDefinitions>
+                <!-- Brand -->
+                <StackPanel Orientation="Horizontal"
+                            VerticalAlignment="Center">
+                    <Border Width="38"
+                            Height="38"
+                            CornerRadius="10"
+                            Background="{StaticResource Brush.Blue}">
+                        <TextBlock Text="A"
+                                   FontSize="22"
+                                   FontWeight="Bold"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"/>
+                    </Border>
+                    <StackPanel Margin="12,0,0,0"
+                                VerticalAlignment="Center">
+                        <TextBlock Text="AuraWave"
+                                   FontSize="20"
+                                   FontWeight="Bold"/>
+                        <TextBlock Text="Radiation Pattern Measurement Suite"
+                                   Style="{StaticResource MutedTextStyle}"
+                                   FontSize="12"/>
+                    </StackPanel>
+                </StackPanel>
+                <!-- Project -->
+                <StackPanel Grid.Column="1"
+                            VerticalAlignment="Center">
+                    <TextBlock Text="Project: Untitled Measurement"
+                               FontWeight="SemiBold"
+                               Foreground="{StaticResource Brush.TextSecondary}"/>
+                    <TextBlock Text="Mode: Simulator | Scan: Idle | Operator: Lab User"
+                               Style="{StaticResource MutedTextStyle}"/>
+                </StackPanel>
+                <!-- Right Actions -->
+                <StackPanel Grid.Column="2"
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center">
+                    <Button Content="New Project"
+                            Style="{StaticResource PrimaryButtonStyle}"
+                            Margin="0,0,10,0"/>
+                    <Button Content="Notifications"
+                            Height="38"
+                            Padding="16,0"
+                            Background="{StaticResource Brush.CardBackground}"
+                            Foreground="{StaticResource Brush.TextPrimary}"
+                            BorderBrush="{StaticResource Brush.Border}"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <!-- Body -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="260"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <!-- Sidebar -->
+            <Border Grid.Column="0"
+                    Background="{StaticResource Brush.SidebarBackground}"
+                    BorderBrush="{StaticResource Brush.Border}"
+                    BorderThickness="0,0,1,0">
+                <DockPanel>
+                    <StackPanel DockPanel.Dock="Top"
+                                Margin="0,16,0,0">
+                        <TextBlock Text="NAVIGATION"
+                                   Foreground="{StaticResource Brush.TextMuted}"
+                                   FontSize="11"
+                                   FontWeight="Bold"
+                                   Margin="24,0,0,8"/>
+                        <Button Content="Dashboard"
+                                Style="{StaticResource NavButtonStyle}"
+                                Click="Dashboard_Click"/>
+                        <Button Content="Hardware Control"
+                                Style="{StaticResource NavButtonStyle}"
+                                Click="Hardware_Click"/>
+                        <Button Content="Measurement Setup"
+                                Style="{StaticResource NavButtonStyle}"
+                                Click="Setup_Click"/>
+                        <Button Content="Live Measurement"
+                                Style="{StaticResource NavButtonStyle}"
+                                Click="LiveMeasurement_Click"/>
+                        <Button Content="Analysis"
+                                Style="{StaticResource NavButtonStyle}"
+                                Click="Analysis_Click"/>
+                        <Button Content="Calibration"
+                                Style="{StaticResource NavButtonStyle}"
+                                Click="Calibration_Click"/>
+                        <Button Content="Reports"
+                                Style="{StaticResource NavButtonStyle}"
+                                Click="Reports_Click"/>
+                        <Button Content="Settings"
+                                Style="{StaticResource NavButtonStyle}"
+                                Click="Settings_Click"/>
+                    </StackPanel>
+                    <Border DockPanel.Dock="Bottom"
+                            Margin="14"
+                            Background="#121C2E"
+                            BorderBrush="{StaticResource Brush.Border}"
+                            BorderThickness="1"
+                            CornerRadius="14"
+                            Padding="14">
+                        <StackPanel>
+                            <TextBlock Text="System Safety"
+                                       FontWeight="SemiBold"/>
+                            <TextBlock Text="Interlocks ready"
+                                       Foreground="{StaticResource Brush.Green}"
+                                       Margin="0,6,0,10"/>
+                            <Button Content="EMERGENCY STOP"
+                                    Style="{StaticResource DangerButtonStyle}"/>
+                        </StackPanel>
+                    </Border>
+                </DockPanel>
+            </Border>
+            <!-- Main Area -->
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="78"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="150"/>
+                </Grid.RowDefinitions>
+                <!-- Hardware Status Bar -->
+                <Border Grid.Row="0"
+                        Background="{StaticResource Brush.TopbarBackground}"
+                        BorderBrush="{StaticResource Brush.Border}"
+                        BorderThickness="0,0,0,1">
+                    <UniformGrid Columns="5"
+                                 Margin="14,10">
+                        <Border Style="{StaticResource CardBorderStyle}"
+                                Padding="12"
+                                Margin="5">
+                            <StackPanel>
+                                <TextBlock Text="VNA" FontWeight="SemiBold"/>
+                                <TextBlock Text="Disconnected" Foreground="{StaticResource Brush.Red}"/>
+                            </StackPanel>
+                        </Border>
+                        <Border Style="{StaticResource CardBorderStyle}"
+                                Padding="12"
+                                Margin="5">
+                            <StackPanel>
+                                <TextBlock Text="Turntable" FontWeight="SemiBold"/>
+                                <TextBlock Text="Ready" Foreground="{StaticResource Brush.Green}"/>
+                            </StackPanel>
+                        </Border>
+                        <Border Style="{StaticResource CardBorderStyle}"
+                                Padding="12"
+                                Margin="5">
+                            <StackPanel>
+                                <TextBlock Text="Motor Driver" FontWeight="SemiBold"/>
+                                <TextBlock Text="Simulator" Foreground="{StaticResource Brush.Cyan}"/>
+                            </StackPanel>
+                        </Border>
+                        <Border Style="{StaticResource CardBorderStyle}"
+                                Padding="12"
+                                Margin="5">
+                            <StackPanel>
+                                <TextBlock Text="RF Switch" FontWeight="SemiBold"/>
+                                <TextBlock Text="E-Plane" Foreground="{StaticResource Brush.Blue}"/>
+                            </StackPanel>
+                        </Border>
+                        <Border Style="{StaticResource CardBorderStyle}"
+                                Padding="12"
+                                Margin="5">
+                            <StackPanel>
+                                <TextBlock Text="Chamber" FontWeight="SemiBold"/>
+                                <TextBlock Text="Safe" Foreground="{StaticResource Brush.Green}"/>
+                            </StackPanel>
+                        </Border>
+                    </UniformGrid>
+                </Border>
+                <!-- Dynamic Frame Region -->
+                <Frame x:Name="MainFrame"
+                       Grid.Row="1"
+                       NavigationUIVisibility="Hidden"
+                       Background="{StaticResource Brush.AppBackground}"/>
+                <!-- Bottom Log Terminal -->
+                <Border Grid.Row="2"
+                        Background="#070D18"
+                        BorderBrush="{StaticResource Brush.Border}"
+                        BorderThickness="0,1,0,0">
+                    <Grid Margin="16,10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="28"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <DockPanel>
+                            <TextBlock Text="System Console"
+                                       FontWeight="SemiBold"
+                                       VerticalAlignment="Center"/>
+                            <TextBlock Text="Ready for commands"
+                                       DockPanel.Dock="Right"
+                                       Foreground="{StaticResource Brush.Green}"
+                                       VerticalAlignment="Center"/>
+                        </DockPanel>
+                        <TextBox Grid.Row="1"
+                                 Text="[00:00:00] AuraWave shell initialized&#x0a;[00:00:01] Simulator mode active&#x0a;[00:00:02] Awaiting hardware connection"
+                                 Background="#020617"
+                                 Foreground="{StaticResource Brush.TextSecondary}"
+                                 BorderBrush="{StaticResource Brush.Border}"
+                                 FontFamily="Consolas"
+                                 FontSize="13"
+                                 IsReadOnly="True"
+                                 TextWrapping="Wrap"
+                                 VerticalScrollBarVisibility="Auto"/>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
+        <!-- Footer -->
+        <Border Grid.Row="2"
+                Background="#020617"
+                BorderBrush="{StaticResource Brush.Border}"
+                BorderThickness="0,1,0,0">
+            <DockPanel Margin="16,0">
+                <TextBlock Text="AuraWave v0.1 | Simulator Mode | Database: Local | Logging: Enabled"
+                           VerticalAlignment="Center"
+                           Foreground="{StaticResource Brush.TextMuted}"/>
+                <TextBlock Text="Scan Idle"
+                           DockPanel.Dock="Right"
+                           VerticalAlignment="Center"
+                           Foreground="{StaticResource Brush.Green}"/>
+            </DockPanel>
+        </Border>
+    </Grid>
+
+</Window>

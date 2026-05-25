@@ -1,0 +1,5 @@
+F:\Project\Aurawave\AuraWave.Plotting\obj\Debug\net10.0\AuraWave.Plotting.csproj.AssemblyReference.cache
+F:\Project\Aurawave\AuraWave.Plotting\obj\Debug\net10.0\AuraWave.Plotting.GeneratedMSBuildEditorConfig.editorconfig
+F:\Project\Aurawave\AuraWave.Plotting\obj\Debug\net10.0\AuraWave.Plotting.AssemblyInfoInputs.cache
+F:\Project\Aurawave\AuraWave.Plotting\obj\Debug\net10.0\AuraWave.Plotting.AssemblyInfo.cs
+F:\Project\Aurawave\AuraWave.Plotting\obj\Debug\net10.0\AuraWave.Plotting.csproj.CoreCompileInputs.cache

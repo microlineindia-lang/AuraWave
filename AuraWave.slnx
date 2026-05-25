@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="AuraWave.Analysis/AuraWave.Analysis.csproj" />
+  <Project Path="AuraWave.App/AuraWave.App.csproj" />
+  <Project Path="AuraWave.Core/AuraWave.Core.csproj" />
+  <Project Path="AuraWave.Hardware/AuraWave.Hardware.csproj" />
+  <Project Path="AuraWave.Plotting/AuraWave.Plotting.csproj" />
+</Solution>

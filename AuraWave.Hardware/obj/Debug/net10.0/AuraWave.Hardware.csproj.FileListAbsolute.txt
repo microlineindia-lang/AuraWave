@@ -1,0 +1,5 @@
+F:\Project\Aurawave\AuraWave.Hardware\obj\Debug\net10.0\AuraWave.Hardware.csproj.AssemblyReference.cache
+F:\Project\Aurawave\AuraWave.Hardware\obj\Debug\net10.0\AuraWave.Hardware.GeneratedMSBuildEditorConfig.editorconfig
+F:\Project\Aurawave\AuraWave.Hardware\obj\Debug\net10.0\AuraWave.Hardware.AssemblyInfoInputs.cache
+F:\Project\Aurawave\AuraWave.Hardware\obj\Debug\net10.0\AuraWave.Hardware.AssemblyInfo.cs
+F:\Project\Aurawave\AuraWave.Hardware\obj\Debug\net10.0\AuraWave.Hardware.csproj.CoreCompileInputs.cache

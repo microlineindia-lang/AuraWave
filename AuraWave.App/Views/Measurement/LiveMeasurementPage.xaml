@@ -1,0 +1,189 @@
+﻿<Page x:Class="AuraWave.App.Views.Measurement.LiveMeasurementPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:AuraWave.App.Views.Measurement"
+      xmlns:controls="clr-namespace:AuraWave.App.Controls"
+      mc:Ignorable="d"
+      d:DesignHeight="450"
+      d:DesignWidth="800"
+      Title="LiveMeasurementPage">
+
+
+    <Grid Margin="18">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="120"/>
+        </Grid.RowDefinitions>
+
+        <DockPanel>
+
+            <StackPanel>
+                <TextBlock Text="Live Measurement"
+                       Style="{StaticResource PageTitleStyle}"/>
+
+                <TextBlock Text="Real-time scan acquisition, S21 plotting, polar radiation pattern, and hardware synchronization"
+                       Style="{StaticResource MutedTextStyle}"
+                       Margin="0,6,0,0"/>
+            </StackPanel>
+
+            <StackPanel DockPanel.Dock="Right"
+                    Orientation="Horizontal">
+
+                <Button Content="Pause"
+                    Height="38"
+                    Padding="16,0"
+                    Margin="0,0,8,0"/>
+
+                <Button Content="Resume"
+                    Style="{StaticResource PrimaryButtonStyle}"
+                    Margin="0,0,8,0"/>
+
+                <Button Content="Abort"
+                    Style="{StaticResource DangerButtonStyle}"/>
+
+            </StackPanel>
+
+        </DockPanel>
+
+        <Grid Grid.Row="1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Border Style="{StaticResource CardBorderStyle}">
+                <Grid>
+                    <TextBlock Text="Polar Radiation Pattern"
+                           Style="{StaticResource SectionTitleStyle}"
+                           VerticalAlignment="Top"/>
+                    <TextBlock Text="Live polar plot placeholder"
+                           Foreground="{StaticResource Brush.Cyan}"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+                </Grid>
+            </Border>
+
+            <Border Grid.Column="1"
+                Style="{StaticResource CardBorderStyle}">
+                <Grid>
+                    <TextBlock Text="S21 vs Angle / Frequency"
+                           Style="{StaticResource SectionTitleStyle}"
+                           VerticalAlignment="Top"/>
+                    <TextBlock Text="ScottPlot area placeholder"
+                           Foreground="{StaticResource Brush.TextMuted}"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="1"
+                Style="{StaticResource CardBorderStyle}">
+                <Grid>
+                    <TextBlock Text="3D Radiation Pattern"
+                           Style="{StaticResource SectionTitleStyle}"
+                           VerticalAlignment="Top"/>
+                    <TextBlock Text="HelixToolkit 3D view placeholder"
+                           Foreground="{StaticResource Brush.Purple}"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="1"
+                Grid.Column="1"
+                Style="{StaticResource CardBorderStyle}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="34"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="Measurement Data"
+                           Style="{StaticResource SectionTitleStyle}"/>
+
+                    <DataGrid Grid.Row="1"
+                          Background="#0F172A"
+                          Foreground="{StaticResource Brush.TextPrimary}"
+                          AutoGenerateColumns="False"
+                          CanUserAddRows="False">
+
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Angle" Width="100"/>
+                            <DataGridTextColumn Header="Freq" Width="120"/>
+                            <DataGridTextColumn Header="S11 dB" Width="120"/>
+                            <DataGridTextColumn Header="S21 dB" Width="120"/>
+                            <DataGridTextColumn Header="Status" Width="*"/>
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+                </Grid>
+            </Border>
+
+        </Grid>
+
+        <Border Grid.Row="2"
+            Style="{StaticResource CardBorderStyle}">
+
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <controls:MetricCard
+    Grid.Column="0"
+    Title="Current Angle"
+    Value="0.00"
+    Unit="°"
+    Caption="Azimuth position"/>
+
+                <controls:MetricCard
+    Grid.Column="1"
+    Title="Frequency"
+    Value="2.400"
+    Unit="GHz"
+    Caption="Current RF point"/>
+
+                <controls:MetricCard
+    Grid.Column="2"
+    Title="Live S21"
+    Value="-42.6"
+    Unit="dB"
+    Caption="Link magnitude"/>
+
+                <controls:MetricCard
+    Grid.Column="3"
+    Title="Progress"
+    Value="0"
+    Unit="%"
+    Caption="Scan completion"/>
+
+                <controls:MetricCard
+    Grid.Column="4"
+    Title="Remaining"
+    Value="--:--"
+    Unit=""
+    Caption="Estimated time left"/>
+
+            </Grid>
+
+        </Border>
+
+    </Grid>
+
+</Page>
+

@@ -1,0 +1,50 @@
+﻿using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
+
+namespace AuraWave.App.Controls;
+
+public partial class StatusTile : UserControl
+{
+    public StatusTile()
+    {
+        InitializeComponent();
+    }
+
+    public static readonly DependencyProperty TitleProperty =
+        DependencyProperty.Register(nameof(Title), typeof(string), typeof(StatusTile), new PropertyMetadata("Title"));
+
+    public static readonly DependencyProperty SubtitleProperty =
+        DependencyProperty.Register(nameof(Subtitle), typeof(string), typeof(StatusTile), new PropertyMetadata(string.Empty));
+
+    public static readonly DependencyProperty StatusProperty =
+        DependencyProperty.Register(nameof(Status), typeof(string), typeof(StatusTile), new PropertyMetadata("Unknown"));
+
+    public static readonly DependencyProperty StatusBrushProperty =
+        DependencyProperty.Register(nameof(StatusBrush), typeof(Brush), typeof(StatusTile),
+            new PropertyMetadata(Brushes.Gray));
+
+    public string Title
+    {
+        get => (string)GetValue(TitleProperty);
+        set => SetValue(TitleProperty, value);
+    }
+
+    public string Subtitle
+    {
+        get => (string)GetValue(SubtitleProperty);
+        set => SetValue(SubtitleProperty, value);
+    }
+
+    public string Status
+    {
+        get => (string)GetValue(StatusProperty);
+        set => SetValue(StatusProperty, value);
+    }
+
+    public Brush StatusBrush
+    {
+        get => (Brush)GetValue(StatusBrushProperty);
+        set => SetValue(StatusBrushProperty, value);
+    }
+}

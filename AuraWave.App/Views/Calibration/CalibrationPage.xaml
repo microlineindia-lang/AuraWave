@@ -1,0 +1,239 @@
+﻿<Page x:Class="AuraWave.App.Views.Calibration.CalibrationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AuraWave.App.Views.Calibration"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CalibrationPage">
+
+
+    <Grid Margin="18">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel>
+            <TextBlock Text="Calibration"
+                   Style="{StaticResource PageTitleStyle}"/>
+
+            <TextBlock Text="VNA calibration, cable compensation, reference antenna correction, and position alignment"
+                   Style="{StaticResource MutedTextStyle}"
+                   Margin="0,6,0,0"/>
+        </StackPanel>
+
+        <Grid Grid.Row="1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="420"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="260"/>
+            </Grid.RowDefinitions>
+
+            <!-- Calibration Workflow -->
+            <Border Style="{StaticResource CardBorderStyle}">
+
+                <StackPanel>
+
+                    <TextBlock Text="Calibration Workflow"
+                           Style="{StaticResource SectionTitleStyle}"/>
+
+                    <TextBlock Text="Run calibration steps before measurement"
+                           Style="{StaticResource MutedTextStyle}"
+                           Margin="0,4,0,18"/>
+
+                    <CheckBox Content="1. Connect calibration kit"
+                          Foreground="{StaticResource Brush.TextPrimary}"
+                          Margin="0,6"/>
+
+                    <CheckBox Content="2. Perform Open standard"
+                          Foreground="{StaticResource Brush.TextPrimary}"
+                          Margin="0,6"/>
+
+                    <CheckBox Content="3. Perform Short standard"
+                          Foreground="{StaticResource Brush.TextPrimary}"
+                          Margin="0,6"/>
+
+                    <CheckBox Content="4. Perform Load standard"
+                          Foreground="{StaticResource Brush.TextPrimary}"
+                          Margin="0,6"/>
+
+                    <CheckBox Content="5. Perform Through standard"
+                          Foreground="{StaticResource Brush.TextPrimary}"
+                          Margin="0,6"/>
+
+                    <CheckBox Content="6. Save calibration profile"
+                          Foreground="{StaticResource Brush.TextPrimary}"
+                          Margin="0,6"/>
+
+                    <Separator Margin="0,18"/>
+
+                    <Button Content="Start VNA Calibration"
+                        Style="{StaticResource PrimaryButtonStyle}"
+                        Margin="0,0,0,10"/>
+
+                    <Button Content="Load Calibration Profile"
+                        Height="38"/>
+
+                </StackPanel>
+
+            </Border>
+
+            <!-- Calibration Status -->
+            <Border Grid.Column="1"
+                Style="{StaticResource CardBorderStyle}">
+
+                <Grid>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="34"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="Calibration Status"
+                           Style="{StaticResource SectionTitleStyle}"/>
+
+                    <Grid Grid.Row="1">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <Border Background="#0F172A"
+                            BorderBrush="{StaticResource Brush.Border}"
+                            BorderThickness="1"
+                            CornerRadius="12"
+                            Padding="18"
+                            Margin="0,0,10,0">
+
+                            <StackPanel>
+                                <TextBlock Text="VNA Calibration"
+                                       Style="{StaticResource MutedTextStyle}"/>
+                                <TextBlock Text="Not Calibrated"
+                                       Foreground="{StaticResource Brush.Orange}"
+                                       FontSize="22"
+                                       FontWeight="SemiBold"
+                                       Margin="0,8,0,0"/>
+                            </StackPanel>
+
+                        </Border>
+
+                        <Border Grid.Column="1"
+                            Background="#0F172A"
+                            BorderBrush="{StaticResource Brush.Border}"
+                            BorderThickness="1"
+                            CornerRadius="12"
+                            Padding="18"
+                            Margin="5,0">
+
+                            <StackPanel>
+                                <TextBlock Text="Position Zero"
+                                       Style="{StaticResource MutedTextStyle}"/>
+                                <TextBlock Text="Unset"
+                                       Foreground="{StaticResource Brush.Red}"
+                                       FontSize="22"
+                                       FontWeight="SemiBold"
+                                       Margin="0,8,0,0"/>
+                            </StackPanel>
+
+                        </Border>
+
+                        <Border Grid.Column="2"
+                            Background="#0F172A"
+                            BorderBrush="{StaticResource Brush.Border}"
+                            BorderThickness="1"
+                            CornerRadius="12"
+                            Padding="18"
+                            Margin="10,0,0,0">
+
+                            <StackPanel>
+                                <TextBlock Text="Reference Antenna"
+                                       Style="{StaticResource MutedTextStyle}"/>
+                                <TextBlock Text="Not Selected"
+                                       Foreground="{StaticResource Brush.TextMuted}"
+                                       FontSize="22"
+                                       FontWeight="SemiBold"
+                                       Margin="0,8,0,0"/>
+                            </StackPanel>
+
+                        </Border>
+
+                    </Grid>
+
+                </Grid>
+
+            </Border>
+
+            <!-- Position Calibration -->
+            <Border Grid.Row="1"
+                Style="{StaticResource CardBorderStyle}">
+
+                <StackPanel>
+
+                    <TextBlock Text="Position Calibration"
+                           Style="{StaticResource SectionTitleStyle}"/>
+
+                    <TextBlock Text="Align mechanical zero with electrical reference"
+                           Style="{StaticResource MutedTextStyle}"
+                           Margin="0,4,0,18"/>
+
+                    <Button Content="Home Turntable"
+                        Height="38"
+                        Margin="0,0,0,10"/>
+
+                    <Button Content="Set Current Position as 0°"
+                        Height="38"
+                        Margin="0,0,0,10"/>
+
+                    <Button Content="Verify 90° / 180° / 360°"
+                        Style="{StaticResource PrimaryButtonStyle}"/>
+
+                </StackPanel>
+
+            </Border>
+
+            <!-- Calibration Log -->
+            <Border Grid.Row="1"
+                Grid.Column="1"
+                Style="{StaticResource CardBorderStyle}">
+
+                <Grid>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="34"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="Calibration Log"
+                           Style="{StaticResource SectionTitleStyle}"/>
+
+                    <TextBox Grid.Row="1"
+                         Text="[CAL] Calibration page loaded&#x0a;[CAL] Waiting for VNA connection&#x0a;[CAL] No calibration profile selected"
+                         Background="#020617"
+                         Foreground="{StaticResource Brush.TextSecondary}"
+                         BorderBrush="{StaticResource Brush.Border}"
+                         FontFamily="Consolas"
+                         FontSize="13"
+                         IsReadOnly="True"
+                         TextWrapping="Wrap"
+                         VerticalScrollBarVisibility="Auto"/>
+
+                </Grid>
+
+            </Border>
+
+        </Grid>
+
+    </Grid>
+
+</Page>
+

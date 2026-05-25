@@ -1,0 +1,215 @@
+﻿<Page x:Class="AuraWave.App.Views.Dashboard.DashboardPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AuraWave.App.Views.Dashboard"
+      xmlns:controls="clr-namespace:AuraWave.App.Controls"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="DashboardPage">
+
+    <Grid Margin="18">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="180"/>
+        </Grid.RowDefinitions>
+        <DockPanel>
+            <StackPanel>
+                <TextBlock Text="Dashboard"
+                           Style="{StaticResource PageTitleStyle}"/>
+                <TextBlock Text="System overview, instrument health, and quick measurement launch"
+                           Style="{StaticResource MutedTextStyle}"
+                           Margin="0,6,0,0"/>
+            </StackPanel>
+            <StackPanel DockPanel.Dock="Right"
+                        Orientation="Horizontal">
+                <Button Content="Start Scan"
+                        Style="{StaticResource PrimaryButtonStyle}"
+                        Margin="0,0,10,0"/>
+                <Button Content="Home Turntable"
+                        Height="38"
+                        Padding="16,0"/>
+            </StackPanel>
+        </DockPanel>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="330"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!-- Hardware Status -->
+            <Border Grid.RowSpan="2"
+                    Style="{StaticResource CardBorderStyle}">
+                <StackPanel>
+                    <TextBlock Text="Hardware Status"
+                               Style="{StaticResource SectionTitleStyle}"/>
+                    <TextBlock Text="Live connection state"
+                               Style="{StaticResource MutedTextStyle}"
+                               Margin="0,4,0,18"/>
+                    <controls:StatusTile
+    Title="VNA"
+    Subtitle="Anritsu MS4644B"
+    Status="Disconnected"
+    StatusBrush="{StaticResource Brush.Red}"/>
+
+                    <controls:StatusTile
+    Title="Turntable"
+    Subtitle="Positioner"
+    Status="Ready"
+    StatusBrush="{StaticResource Brush.Green}"/>
+
+                    <controls:StatusTile
+    Title="Motor Driver"
+    Subtitle="Simulator"
+    Status="Active"
+    StatusBrush="{StaticResource Brush.Cyan}"/>
+
+                    <controls:StatusTile
+    Title="RF Switch"
+    Subtitle="Plane"
+    Status="E-Plane"
+    StatusBrush="{StaticResource Brush.Blue}"/>
+
+                    <controls:StatusTile
+    Title="Chamber"
+    Subtitle="Environment"
+    Status="Safe"
+    StatusBrush="{StaticResource Brush.Green}"/>
+                    <Separator Margin="0,18"/>
+                    <Button Content="Switch E-Plane"
+                            Height="36"
+                            Margin="0,0,0,8"/>
+                    <Button Content="Switch H-Plane"
+                            Height="36"
+                            Margin="0,0,0,8"/>
+                    <Button Content="Emergency Stop"
+                            Style="{StaticResource DangerButtonStyle}"/>
+                </StackPanel>
+            </Border>
+            <!-- Polar Plot Preview -->
+            <Border Grid.Column="1"
+                    Style="{StaticResource CardBorderStyle}">
+                <Grid>
+                    <TextBlock Text="Live Polar Plot"
+                               Style="{StaticResource SectionTitleStyle}"
+                               VerticalAlignment="Top"/>
+                    <Grid VerticalAlignment="Center"
+                          HorizontalAlignment="Center">
+                        <Ellipse Width="260"
+                                 Height="260"
+                                 Stroke="{StaticResource Brush.Border}"
+                                 StrokeThickness="1"/>
+                        <Ellipse Width="180"
+                                 Height="180"
+                                 Stroke="#334155"
+                                 StrokeThickness="1"/>
+                        <Ellipse Width="100"
+                                 Height="100"
+                                 Stroke="#334155"
+                                 StrokeThickness="1"/>
+                        <TextBlock Text="Polar Preview"
+                                   Foreground="{StaticResource Brush.Cyan}"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontWeight="SemiBold"/>
+                    </Grid>
+                </Grid>
+            </Border>
+            <!-- S Parameter -->
+            <Border Grid.Column="2"
+                    Style="{StaticResource CardBorderStyle}">
+                <Grid>
+                    <TextBlock Text="S-Parameter Plot"
+                               Style="{StaticResource SectionTitleStyle}"
+                               VerticalAlignment="Top"/>
+                    <TextBlock Text="S11 / S21 plot placeholder"
+                               Foreground="{StaticResource Brush.TextMuted}"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+                </Grid>
+            </Border>
+            <!-- Chamber -->
+            <Border Grid.Row="1"
+                    Grid.Column="1"
+                    Style="{StaticResource CardBorderStyle}">
+                <Grid>
+                    <TextBlock Text="Chamber Visualization"
+                               Style="{StaticResource SectionTitleStyle}"
+                               VerticalAlignment="Top"/>
+                    <TextBlock Text="AUT, reference antenna, and turntable preview"
+                               Foreground="{StaticResource Brush.TextMuted}"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+                </Grid>
+            </Border>
+            <!-- Progress -->
+            <Border Grid.Row="1"
+                    Grid.Column="2"
+                    Style="{StaticResource CardBorderStyle}">
+                <StackPanel>
+                    <TextBlock Text="Scan Progress"
+                               Style="{StaticResource SectionTitleStyle}"/>
+                    <TextBlock Text="No active scan"
+                               Style="{StaticResource MutedTextStyle}"
+                               Margin="0,4,0,24"/>
+                    <ProgressBar Height="14"
+                                 Value="0"
+                                 Maximum="100"/>
+                    <Grid Margin="0,24,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel>
+                            <TextBlock Text="Current Angle"
+                                       Style="{StaticResource MutedTextStyle}"/>
+                            <TextBlock Text="0.00°"
+                                       FontSize="28"
+                                       FontWeight="SemiBold"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1">
+                            <TextBlock Text="Current Frequency"
+                                       Style="{StaticResource MutedTextStyle}"/>
+                            <TextBlock Text="2.400 GHz"
+                                       FontSize="28"
+                                       FontWeight="SemiBold"/>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+            </Border>
+        </Grid>
+        <!-- Recent Projects -->
+        <Border Grid.Row="2"
+                Style="{StaticResource CardBorderStyle}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="34"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Recent Projects / Measurement Queue"
+                           Style="{StaticResource SectionTitleStyle}"/>
+                <DataGrid Grid.Row="1"
+                          Background="#0F172A"
+                          Foreground="{StaticResource Brush.TextPrimary}"
+                          BorderBrush="{StaticResource Brush.Border}"
+                          HeadersVisibility="Column"
+                          AutoGenerateColumns="False"
+                          CanUserAddRows="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Project" Width="*" Binding="{Binding Project}"/>
+                        <DataGridTextColumn Header="Type" Width="160" Binding="{Binding Type}"/>
+                        <DataGridTextColumn Header="Frequency" Width="160" Binding="{Binding Frequency}"/>
+                        <DataGridTextColumn Header="Status" Width="140" Binding="{Binding Status}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Border>
+    </Grid>
+
+</Page>
